@@ -54,6 +54,11 @@ export default function TextForm(props) {
   };
   // ================================================================================//
 
+  const handleRemoveExtraSpaces = () => {
+    let newText = text.split(/\s+/).join(" ").trim();
+    setText(newText);
+  };
+
   // ================================================================================//
   //   Google API used to convert text in marathi
   const convertToMarathi = async () => {
@@ -171,7 +176,7 @@ export default function TextForm(props) {
             placeholder="Enter text here"
           />
         </div>
-        <button className="btn btn-dark ms-3 mt-2" onClick={handleUpClick}>
+        <button className="btn btn-primary ms-3 mt-2" onClick={handleUpClick}>
           Convert to upper case
         </button>
         <button
@@ -191,6 +196,12 @@ export default function TextForm(props) {
           onClick={translateToMarathi}
         >
           Get Marathi Meaning
+        </button>
+        <button
+          className="btn  btn-dark ms-3 mt-2 "
+          onClick={handleRemoveExtraSpaces}
+        >
+          Remove Extra Spaces
         </button>
       </div>
     </>
