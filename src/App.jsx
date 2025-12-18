@@ -16,7 +16,7 @@ function App() {
     <div className={`app ${mode}`}>
       <Navbar
         title="TextPro"
-        about="AboutTextUtils"
+        about="AboutTextPro"
         mode={mode}
         toggleMode={toggleMode}
       />
