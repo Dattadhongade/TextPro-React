@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+    .btn {
+        width: 150px;
+    }
+
+    .btn-danger {
+        margin-left: 2rem;
+        height: 3.8rem;
+    }
+}
+
+/* Base */
+.app {
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+/* Light Mode */
+.app.light {
+    background-color: white;
+    color: black;
+}
+
+/* Dark Mode */
+.app.dark {
+    background-color: #212529;
+    color: white;
+}
+
+/* Buttons */
+.app.dark .btn {
+    background-color: #495057;
+    color: white;
+    border: none;
+}
+
+.app.dark .btn:hover {
+    background-color: #6c757d;
+}
+
+/* Textarea */
+.app.dark textarea {
+    background-color: #343a40;
+    color: white;
+    border: 1px solid #6c757d;
+}
+
+/* Card */
+.app.dark .card {
+    background-color: #343a40;
+    color: white;
+}
+
+/* Alert */
+.app.dark .alert {
+    background-color: #842029;
+    color: white;
+}
+.navbar-dark-border {
+    border-bottom: 1px solid #6c757d;
+}
+.navbar-light-border {
+    border-bottom: 1px solid #9dabc5;
+    border-top: 1px solid #9dabc5;
+}
+
+/* Accordion dark mode fixes */
+.app.dark .accordion-button {
+    background-color: #212529;
+    color: #ffffff;
+}
+
+.app.dark .accordion-button:not(.collapsed) {
+    background-color: #212529;
+    color: #ffffff;
+}
+
+.app.dark .accordion-button.collapsed {
+    background-color: #212529;
+    color: #ffffff;
+}
+
+.app.dark .accordion-body {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.app.dark .accordion-item {
+    background-color: #343a40;
+    border: 1px solid #495057;
+}
+/* Change accordion arrow color in dark mode */
+.app.dark .accordion-button::after {
+    filter: invert(1);
+}
