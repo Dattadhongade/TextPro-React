@@ -26,7 +26,7 @@ function App() {
           <Route
             path="/"
             element={
-              <TextForm heading="Enter the text below to analyze" mode={mode} />
+              <TextForm heading="TextPro - Text Convertor and Analyzer" mode={mode} />
             }
           />
           <Route path="/about" element={<About />} />
