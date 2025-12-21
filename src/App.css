@@ -98,3 +98,16 @@
 .app.dark .accordion-button::after {
     filter: invert(1);
 }
+
+.error-wrapper {
+    height: 50px;
+    /* fixed height */
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* .error-alert {
+    padding: 6px 12px;
+    margin: 0;
+    font-size: 14px;
+} */

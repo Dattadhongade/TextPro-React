@@ -132,77 +132,81 @@ export default function TextForm(props) {
 
   return (
     <>
-      {error && <div className="alert alert-danger mt-2">{error}</div>}
-
-      {/* Summary of text nput  */}
-      <p>
-        <a
-          className="btn btn-primary"
-          data-bs-toggle="collapse"
-          href="#collapseExample"
-          role="button"
-          aria-expanded="false"
-          aria-controls="collapseExample"
-        >
-          View Summary of your text
-        </a>
-        <button
-          type="button"
-          className="btn btn-danger ms-3"
-          onClick={handleClearClick}
-        >
-          Refresh
-        </button>
-      </p>
-      <div className="collapse" id="collapseExample">
-        <div className="card card-body">
-          <h4>Worlds in your text is : {wordCount}</h4>
-          <h4>Length of your text is : {text.length}</h4>
-          <h4>Spaces in your text is : {text.split(" ").length - 1}</h4>
-          <h4>Reading Time: {readingTime}</h4>
-        </div>
+      <div className="error-wrapper">
+        {error && <div className="alert alert-danger error-alert">{error}</div>}
       </div>
-      {/* Text box with Btns  */}
-      <div>
-        <h1>{props.heading}</h1>
-        <div className="mb-3">
-          <textarea
-            className={`form-control ${
-              props.mode === "dark" ? "bg-dark text-light" : ""
-            }`}
-            value={text}
-            onChange={handleOnChange}
-            rows="10"
-            placeholder="Enter text here"
-          />
+
+      <div className="container mt-3 ">
+        {/* Summary of text nput  */}
+        <p>
+          <a
+            className="btn btn-primary"
+            data-bs-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            View Summary of your text
+          </a>
+          <button
+            type="button"
+            className="btn btn-danger ms-3"
+            onClick={handleClearClick}
+          >
+            Refresh
+          </button>
+        </p>
+        <div className="collapse" id="collapseExample">
+          <div className="card card-body">
+            <h4>Worlds in your text is : {wordCount}</h4>
+            <h4>Length of your text is : {text.length}</h4>
+            <h4>Spaces in your text is : {text.split(" ").length - 1}</h4>
+            <h4>Reading Time: {readingTime}</h4>
+          </div>
         </div>
-        <button className="btn btn-primary ms-3 mt-2" onClick={handleUpClick}>
-          Convert to upper case
-        </button>
-        <button
-          className="btn btn-secondary ms-3  mt-2"
-          onClick={handleLowerClick}
-        >
-          Convert to lower case
-        </button>
-        <button
-          className="btn btn-success ms-3  mt-2"
-          onClick={convertToMarathi}
-        >
-          Convert to Marathi
-        </button>
-        <button
-          className="btn  btn-info ms-3 mt-2 "
-          onClick={translateToMarathi}
-        >
-          Get Marathi Meaning
-        </button>
-        <button
-          className="btn  btn-dark ms-3 mt-2 "
-          onClick={handleRemoveExtraSpaces}
-        >
-          Remove Extra Spaces
-        </button>
+        {/* Text box with Btns  */}
+        <div>
+          <h1>{props.heading}</h1>
+          <div className="mb-3">
+            <textarea
+              className={`form-control ${
+                props.mode === "dark" ? "bg-dark text-light" : ""
+              }`}
+              value={text}
+              onChange={handleOnChange}
+              rows="10"
+              placeholder="Enter text here"
+            />
+          </div>
+          <button className="btn btn-primary ms-3 mt-2" onClick={handleUpClick}>
+            Convert to upper case
+          </button>
+          <button
+            className="btn btn-secondary ms-3  mt-2"
+            onClick={handleLowerClick}
+          >
+            Convert to lower case
+          </button>
+          <button
+            className="btn btn-success ms-3  mt-2"
+            onClick={convertToMarathi}
+          >
+            Convert to Marathi
+          </button>
+          <button
+            className="btn  btn-info ms-3 mt-2 "
+            onClick={translateToMarathi}
+          >
+            Get Marathi Meaning
+          </button>
+          <button
+            className="btn  btn-dark ms-3 mt-2 "
+            onClick={handleRemoveExtraSpaces}
+          >
+            Remove Extra Spaces
+          </button>
+        </div>
       </div>
     </>
   );
